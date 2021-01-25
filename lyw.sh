@@ -6,7 +6,7 @@ LYWSD02 0x0052 0x004c 0x004b'
 
 ! [ -f mqtt.conf ] && echo "Fail to find mqtt.conf file" && exit 1
 . ./mqtt.conf
-mqtt="mosquitto_pub -h $host -p $port"
+mqtt="mosquitto_pub -h $host -p $port -r"
 [ -n "$user$pass" ] && mqtt="$mqtt -u $user -P $pass"
 [ -n "$topicpref" ] && mqtt="$mqtt -t $topicpref" || mqtt="$mqtt -t "
 
