@@ -12,7 +12,7 @@ mqtt="mosquitto_pub -h $host -p $port -r"
 
 for mac in $*; do
     echo "============ $(date +'%F %T') ============="
-    if handle=`gatttool -b "$mac" --characteristics | sed '/ebe0ccc1/!d;s/^.*char value handle = //;s/, .*//'` 2>/dev/null; then
+    if handle=`timeout 30 gatttool -b "$mac" --characteristics | sed '/ebe0ccc1/!d;s/^.*char value handle = //;s/, .*//'` 2>/dev/null; then
         if [ -z "$handle" ]; then
             echo "Device with mac $mac doesn't have needed handle or connection is failed, skipping"
         else
