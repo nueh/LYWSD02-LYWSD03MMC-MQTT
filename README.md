@@ -42,7 +42,7 @@ Run this
 ```
 sudo hcitool lescan
 ```
-to catch mac addresses of devices with names starts with _LYWSD_. You can't just grep output cause *hchitool lecan* does not flash stdout buffer during work. Lines can be duplicated, collect and save uniq mac addresses of devices for using with script.
+to catch mac addresses of devices with names starts with _LYWSD_. You can't just grep output cause *hcitool lescan* does not flash stdout buffer during work. Lines can be duplicated, collect and save uniq mac addresses of devices for using with script.
 
 ## Running
 
